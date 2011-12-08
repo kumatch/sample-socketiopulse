@@ -15,4 +15,4 @@ io.sockets.on('connection', function (socket) {
     }, 1000);
 });
 
-app.listen(8000);
+app.listen(80);
