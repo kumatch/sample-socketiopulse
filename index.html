@@ -1,0 +1,16 @@
+<html>
+  <title>Socket.IO pulse test</title>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost');
+      socket.on('pulse', function (data) {
+      console.log(data);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Socket.IO pulse test</h1>
+    See debug console.
+  </body>
+</html>
