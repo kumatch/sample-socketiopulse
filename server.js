@@ -11,7 +11,7 @@ var app = require('http').createServer( function (req, res) {
 var io = require('socket.io').listen(app, { log: false });
 io.sockets.on('connection', function (socket) {
     setInterval(function () {
-        socket.emit('pulse', 2);
+        socket.emit('pulse', 1);
     }, 1000);
 });
 
