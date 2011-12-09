@@ -4,6 +4,11 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io.connect();
+
+      setInterval(function () {
+        socket.emit('pulse', 1);
+      }, 1000);
+
       socket.on('pulse', function (data) {
         console.log(data);
       });

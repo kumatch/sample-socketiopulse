@@ -10,9 +10,9 @@ var app = require('http').createServer( function (req, res) {
 
 var io = require('socket.io').listen(app, { log: false });
 io.sockets.on('connection', function (socket) {
-    setInterval(function () {
-        socket.emit('pulse', 1);
-    }, 1000);
+    socket.on('pulse', function (data) {
+        socket.emit('pulse', data ? data * 2 : 0);
+    });
 });
 
 app.listen(80);
