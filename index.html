@@ -16,6 +16,20 @@
   </head>
   <body>
     <h1>Socket.IO pulse test</h1>
-    See debug console
+    <p>See debug console</p>
+
+    <h2>A Script on browser.</h2>
+    <pre>
+var socket = io.connect();
+
+setInterval(function () {
+  socket.emit('pulse', 1);
+}, 1000);
+
+socket.on('pulse', function (data) {
+  console.log(data);
+});
+</pre>
+
   </body>
 </html>
